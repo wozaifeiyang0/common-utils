@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 /**
+ *
+ * 解决double与float类型操作精度问题工具
  * @author tanghy
- * @description 解决double与float类型操作精度问题工具
- * @date 2020-01-17 5:28 下午
  */
 public class NumberUtil {
 
