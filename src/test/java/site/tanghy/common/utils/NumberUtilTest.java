@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class NumberUtilTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void format() {
     }
 
