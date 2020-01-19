@@ -14,8 +14,8 @@ public class StringUtil {
     /**
      * 判断字符串是否为空
      * 如果字符串中有空格时为空
-     * @param value
-     * @return
+     * @param value 字符串
+     * @return 返回true或者false
      */
     public static boolean isBlank(String value){
         return value == null || value.length() == 0 || value.trim().length() == 0;
@@ -24,8 +24,8 @@ public class StringUtil {
     /**
      * 判断字符串不为空
      *
-     * @param value
-     * @return
+     * @param value 字符串
+     * @return 返回true或者false
      */
     public static boolean isNotBlank(String value){
         return !isBlank(value);
@@ -35,8 +35,8 @@ public class StringUtil {
     /**
      * 判断字符串为空
      * 如果字符串中有空格时不为空
-     * @param value
-     * @return
+     * @param value 字符串
+     * @return 返回true或者false
      */
     public static boolean isEmpty(String value){
         return value == null || value.length() == 0;
@@ -44,8 +44,8 @@ public class StringUtil {
 
     /**
      * 判断字符串不为空
-     * @param value
-     * @return
+     * @param value 字符串
+     * @return 返回true或者false
      */
     public static boolean isNotEmpty(String value){
         return !isEmpty(value);
