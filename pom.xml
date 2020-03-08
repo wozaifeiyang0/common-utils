@@ -6,13 +6,18 @@
 
     <groupId>site.tanghy</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.5.2</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.11</version>
         </dependency>
     </dependencies>
     <properties>
