@@ -6,7 +6,8 @@
 
     <groupId>site.tanghy</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
+
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -20,33 +21,27 @@
             <version>4.5.11</version>
         </dependency>
     </dependencies>
+
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <!-- 第一步 发布代码三要素，必不可少  -->
     <name>common-utils</name>
     <description>Java has a problem with precision when dealing with double and float addition, subtraction, multiplication and division operations, so it's a good idea to solve this problem and create some useful tool libraries</description>
     <url>https://github.com/wozaifeiyang0/common-utils</url>
 
+    <!-- 第二步  代码使用证书  -->
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>actable</distribution>
+            <distribution>repo</distribution>
         </license>
     </licenses>
 
-    <developers>
-        <developer>
-            <name>wozaifeiyang0</name>
-            <email>wozaifeiyang0@163.com</email>
-            <organization>tanghy</organization>
-            <url>http://www.tanghy.site</url>
-        </developer>
-    </developers>
-
-
+    <!-- 第三步 源代码配置  -->
     <scm>
         <connection>scm:git:git@github.com:wozaifeiyang0/common-utils.git</connection>
         <developerConnection>scm:git:git@github.com:wozaifeiyang0/common-utils.git</developerConnection>
@@ -54,8 +49,20 @@
         <tag>1.0</tag>
     </scm>
 
+    <!-- 第四步 开发账户信息  -->
+    <developers>
+        <developer>
+            <name>wozaifeiyang0</name>
+            <email>wozaifeiyang0@163.com</email>
+            <organization>Tanghy</organization>
+            <url>http://www.tanghy.site</url>
+        </developer>
+    </developers>
+
+    <!-- 第五步 配置文件管理 -->
     <profiles>
 
+        <!-- 开发环境配置 -->
         <profile>
             <id>dev</id>
             <activation>
@@ -66,7 +73,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.8.0</version>
+                        <version>3.8.1</version>
                         <configuration>
                             <source>1.8</source>
                             <target>1.8</target>
@@ -77,29 +84,30 @@
 
         </profile>
 
+        <!-- 发布环境配置 -->
         <profile>
             <id>release</id>
             <build>
                 <plugins>
-                    <!-- Source -->
+                    <!-- 源码编译插件 -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.0.0</version>
+                        <version>2.2.1</version>
                         <executions>
                             <execution>
-                                <phase>package</phase>
+                                <id>attach-sources</id>
                                 <goals>
                                     <goal>jar-no-fork</goal>
                                 </goals>
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- Javadoc -->
+                    <!-- Javadoc配置 -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9.1</version>
+                        <version>3.1.1</version>
                         <executions>
                             <execution>
                                 <phase>package</phase>
@@ -109,13 +117,14 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!-- GPG -->
+                    <!-- GPG配置 -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
+                        <version>1.6</version>
                         <executions>
                             <execution>
+                                <id>sign-artifacts</id>
                                 <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
@@ -123,11 +132,11 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <!--Compiler-->
+                    <!-- Compiler配置 -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.8.0</version>
+                        <version>3.8.1</version>
                         <configuration>
                             <source>1.8</source>
                             <target>1.8</target>
@@ -137,11 +146,23 @@
                             <showWarnings>false</showWarnings>
                         </configuration>
                     </plugin>
-                    <!--Release-->
+                    <!-- Release配置 -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-release-plugin</artifactId>
                         <version>2.5.3</version>
+                    </plugin>
+                    <!-- sonatype配置自动发布插件 -->
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>tanghy</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
@@ -163,10 +184,5 @@
             </distributionManagement>
         </profile>
     </profiles>
-
-
-
-
-
 
 </project>
