@@ -1,4 +1,4 @@
-package site.tanghy.common.utils;
+package space.tanghy.common.utils;
 
 import org.junit.jupiter.api.Test;
 

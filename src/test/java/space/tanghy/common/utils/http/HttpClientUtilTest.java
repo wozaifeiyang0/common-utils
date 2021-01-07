@@ -1,7 +1,6 @@
-package site.tanghy.common.utils.http;
+package space.tanghy.common.utils.http;
 
 import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -9,8 +8,6 @@ import org.apache.http.util.EntityUtils;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author tanghy

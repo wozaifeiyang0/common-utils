@@ -1,4 +1,4 @@
-package site.tanghy.common.utils;
+package space.tanghy.common.utils;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;

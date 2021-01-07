@@ -1,4 +1,4 @@
-package site.tanghy.common.utils.http;
+package space.tanghy.common.utils.http;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -11,7 +11,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.protocol.HttpContext;
-import site.tanghy.common.utils.ObjectUtil;
+import space.tanghy.common.utils.ObjectUtil;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>site.tanghy</groupId>
+    <groupId>space.tanghy</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.0</version>
 
     <dependencies>
         <dependency>
@@ -46,7 +46,6 @@
         <connection>scm:git:git@github.com:wozaifeiyang0/common-utils.git</connection>
         <developerConnection>scm:git:git@github.com:wozaifeiyang0/common-utils.git</developerConnection>
         <url>https://github.com/wozaifeiyang0/common-utils</url>
-        <tag>1.0</tag>
     </scm>
 
     <!-- 第四步 开发账户信息  -->
@@ -55,7 +54,6 @@
             <name>wozaifeiyang0</name>
             <email>wozaifeiyang0@163.com</email>
             <organization>Tanghy</organization>
-            <url>http://www.tanghy.site</url>
         </developer>
     </developers>
 
@@ -93,9 +91,10 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.2.1</version>
+                        <version>3.2.1</version>
                         <executions>
                             <execution>
+                                <phase>package</phase>
                                 <id>attach-sources</id>
                                 <goals>
                                     <goal>jar-no-fork</goal>
@@ -182,6 +181,7 @@
                     <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
+
         </profile>
     </profiles>
 
