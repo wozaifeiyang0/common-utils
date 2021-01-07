@@ -1,5 +1,7 @@
 package space.tanghy.common.utils;
 
+import java.lang.reflect.Array;
+
 /**
  *
  * 解决对象操作工具
@@ -16,9 +18,17 @@ public class ObjectUtil {
 
         if (o == null) {
             return true;
-        } else {
-            return false;
         }
+
+        if (o instanceof String) {
+            return StringUtil.isEmpty(o.toString());
+        }
+
+        if (o.getClass().isArray()) {
+            return Array.getLength(o) == 0;
+        }
+
+        return false;
 
     }
 
